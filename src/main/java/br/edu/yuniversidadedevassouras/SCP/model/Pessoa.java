@@ -27,10 +27,10 @@ public class Pessoa {
     @Column(nullable = true)
     private char GENERO;
     @Column(nullable = true)
-    private String USERNAME;
+    private String username;
     @Column(unique = true,nullable = false)
-    private String SENHA;
-    @Column(nullable = false)
+    private String senha;
+    @Column(nullable = true)
 
     @Lob
     private String FOTO;

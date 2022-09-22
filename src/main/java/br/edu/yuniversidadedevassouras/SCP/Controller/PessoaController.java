@@ -2,6 +2,7 @@ package br.edu.yuniversidadedevassouras.SCP.Controller;
 
 import br.edu.yuniversidadedevassouras.SCP.Repository.PessoaDAO;
 import br.edu.yuniversidadedevassouras.SCP.model.Pessoa;
+import br.edu.yuniversidadedevassouras.SCP.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,21 +14,23 @@ public class PessoaController {
 
     @Autowired
     private PessoaDAO pessoaDAO;
-    private Pessoa pessoa;
+
+    @Autowired
+    private UserService userService;
 
     @GetMapping
     public Iterable<Pessoa> getAll(){
         return pessoaDAO.findAll();
     }
 
-    @GetMapping(path = "/pessoa/{id}")
+    @GetMapping(path = "/{id}")
     public @ResponseBody Optional<Pessoa> getPessoa(@PathVariable("id")Long id){
         return pessoaDAO.findById(id);
     }
 
     @PostMapping
     public Pessoa postPessoa(@RequestBody Pessoa p){
-        return  pessoaDAO.save(p);
+        return  userService.salvar(p);
     }
 
     @DeleteMapping
@@ -37,7 +40,7 @@ public class PessoaController {
 
     @PutMapping
     public Pessoa putPessoa(@RequestBody Pessoa p){
-        return  pessoaDAO.save(p);
+        return  userService.salvar(p);
     }
 }
 

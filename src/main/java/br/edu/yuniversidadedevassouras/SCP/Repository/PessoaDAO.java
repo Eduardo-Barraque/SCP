@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.Optional;
 
 public interface PessoaDAO extends CrudRepository<Pessoa, Long> {
-    Pessoa findByUSERNAME(String USERNAME);
+    Pessoa findByUsername(String username);
 }
