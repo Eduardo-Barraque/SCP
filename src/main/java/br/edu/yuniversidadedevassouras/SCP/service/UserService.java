@@ -1,5 +1,8 @@
 package br.edu.yuniversidadedevassouras.SCP.service;
 
+import br.edu.yuniversidadedevassouras.SCP.Repository.PessoaDAO;
+import br.edu.yuniversidadedevassouras.SCP.model.Pessoa;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -10,8 +13,18 @@ import java.util.ArrayList;
 
 @Service
 public class UserService implements UserDetailsService {
+
+    @Autowired
+    private PessoaDAO pessoaDAO;
+
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User("admin", "$2a$12$2nlO2BAMBmSNjVLvQrNgDOWd7jTGFQvJbjAhrti77yOcXNbIcp6Ii", new ArrayList<>());
+        Pessoa usuario = pessoaDAO.findByUSERNAME(username);
+        if (usuario == null) {
+            throw new UsernameNotFoundException("Usuário com o nome: " + username + "não encontrado");
+        }
+
+        return new User(usuario.getUSERNAME(), usuario.getSENHA(), new ArrayList<>());
     }
 }
