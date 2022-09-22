@@ -13,7 +13,7 @@ public class PessoaController {
 
     @Autowired
     private PessoaDAO pessoaDAO;
-    private Pessoa pessoao;
+    private Pessoa pessoa;
 
     @GetMapping
     public Iterable<Pessoa> getAll(){
