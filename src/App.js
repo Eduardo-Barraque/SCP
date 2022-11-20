@@ -7,22 +7,30 @@ import useToken from './Components/Login/useToken';
 
 function App() {
 
-  const { token, setToken } = useToken();
+    const { token, setToken } = useToken();
 
-  if(!token) {
-    return <Login setToken={setToken} />
-  }
+    if (!token) {
+        return <Login setToken = { setToken }
+        />
+    }
 
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" >
-          <Route path="pessoa" element={<PessoaBox />} />
-          <Route path="login" element={<Login />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  );
+    return ( <
+        BrowserRouter >
+        <
+        Routes >
+        <
+        Route path = "/" >
+        <
+        Route path = "pessoa"
+        element = { < PessoaBox / > }
+        /> <
+        Route path = "login"
+        element = { < Login / > }
+        /> <
+        /Route> <
+        /Routes> <
+        /BrowserRouter>
+    );
 }
 
 export default App;
