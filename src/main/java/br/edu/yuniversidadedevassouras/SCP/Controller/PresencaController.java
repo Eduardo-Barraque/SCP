@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/presenca")
+@CrossOrigin
 public class PresencaController {
 
     @Autowired
@@ -25,6 +26,7 @@ public class PresencaController {
         return presencaDAO.findById(id);
     }
 
+    @CrossOrigin
     @PostMapping
     public Presenca postPresenca(@RequestBody Presenca p){
         return  presencaDAO.save(p);
