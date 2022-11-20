@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping(path = "/pessoa")
-@CrossOrigin
 public class PessoaController {
 
     @Autowired
@@ -24,6 +24,7 @@ public class PessoaController {
         return pessoaDAO.findAll();
     }
 
+    @CrossOrigin
     @GetMapping(path = "/{id}")
     public @ResponseBody Optional<Pessoa> getPessoa(@PathVariable("id")Long id){
         return pessoaDAO.findById(id);
