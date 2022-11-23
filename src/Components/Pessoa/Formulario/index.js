@@ -19,12 +19,14 @@ export default function Formulario() {
         console.log(postData);
 
         try {
-            await fetch(`${baseURL}`, {
+            await fetch("http://localhost:8080/pessoa/add", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify(postData),
+            }).then(()=>{
+                console.log("Nova Pessoa adicionada")
             });
 
         } catch (err) {

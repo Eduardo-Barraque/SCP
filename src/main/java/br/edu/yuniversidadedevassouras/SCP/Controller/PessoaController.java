@@ -2,26 +2,27 @@ package br.edu.yuniversidadedevassouras.SCP.Controller;
 
 import br.edu.yuniversidadedevassouras.SCP.Repository.PessoaDAO;
 import br.edu.yuniversidadedevassouras.SCP.model.Pessoa;
-import br.edu.yuniversidadedevassouras.SCP.service.UserService;
+import br.edu.yuniversidadedevassouras.SCP.service.PessoaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
-@CrossOrigin(maxAge = 3600)
 @RestController
-@RequestMapping(path = "/pessoa")
+@RequestMapping("/pessoa")
+@CrossOrigin(maxAge = 3600)
 public class PessoaController {
 
     @Autowired
     private PessoaDAO pessoaDAO;
 
     @Autowired
-    private UserService userService;
+    private PessoaServiceImpl pessoaServiceImpl;
 
     @GetMapping
-    public Iterable<Pessoa> getAll(){
-        return pessoaDAO.findAll();
+    public List<Pessoa> getAllPessoas(){
+        return pessoaServiceImpl.getAllPessoas();
     }
 
     @CrossOrigin
@@ -30,19 +31,19 @@ public class PessoaController {
         return pessoaDAO.findById(id);
     }
 
-    @PostMapping
-    public Pessoa postPessoa(@RequestBody Pessoa p){
-        return  userService.salvar(p);
+    @PostMapping("/add")
+    public String postPessoa(@RequestBody Pessoa pessoa){
+        pessoaServiceImpl.salvar(pessoa);
+        return "Nova pessoa adicionada";
     }
 
     @DeleteMapping
-    public void Delete(){
-        pessoaDAO.deleteAll();
+    public void Delete(){ pessoaDAO.deleteAll();
     }
 
     @PutMapping
     public Pessoa putPessoa(@RequestBody Pessoa p){
-        return  userService.salvar(p);
+        return  pessoaServiceImpl.salvar(p);
     }
 }
 

@@ -2,7 +2,6 @@ package br.edu.yuniversidadedevassouras.SCP.Controller;
 
 import br.edu.yuniversidadedevassouras.SCP.Repository.PresencaDAO;
 import br.edu.yuniversidadedevassouras.SCP.model.Presenca;
-import br.edu.yuniversidadedevassouras.SCP.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +15,7 @@ public class PresencaController {
     @Autowired
     private PresencaDAO presencaDAO;
 
-    @GetMapping
+    @GetMapping("getAll")
     public Iterable<Presenca> getAll(){
         return presencaDAO.findAll();
     }

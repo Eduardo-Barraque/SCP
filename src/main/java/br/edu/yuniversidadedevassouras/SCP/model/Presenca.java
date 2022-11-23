@@ -15,6 +15,7 @@ public class Presenca {
     private Date DATA;
     @Column(nullable = false)
     private Boolean SITUACAO;
-    @ManyToOne
+
+    @ManyToOne(optional = true,cascade = CascadeType.ALL)
     private Pessoa pessoa;
 }

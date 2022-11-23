@@ -23,7 +23,7 @@ export default function Login({ setToken }) {
     e.preventDefault();
     const token = await loginUser({
       username,
-      password
+      password,
     });
     setToken(token);
     console.log(loginUser);
