@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css'
 
 import Formulario from './Formulario';
 import Tabela from './Tabela';
@@ -7,12 +8,12 @@ function PessoaBox() {
 
     return (
         <div>
-            <div className="row">
-                <div className="col-md-6 my-3">
+            <div className="row gridd">
+                <div className=" grid2">
                     <h2 className="font-weight-bold text-center"> Cadastro de Pessoas </h2>
                     <Formulario />
                 </div>
-                <div className="col-md-6 my-3">
+                <div className=" grid1">
                     <h2 className="font-weight-bold text-center"> Lista de Pessoas </h2>
                     <Tabela />
                 </div>

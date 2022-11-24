@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
-@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping(path = "/pessoa")
+@CrossOrigin(maxAge = 3600)
 public class PessoaController {
 
     @Autowired

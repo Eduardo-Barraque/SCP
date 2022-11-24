@@ -1,0 +1,11 @@
+.grid1{grid-area: cima}
+
+.grid2{grid-area: baixo}
+.gridd{display: grid;
+    grid-template-areas: 'cima' 'baixo';
+}
+.gridG{display: grid;
+grid-template-areas: 'masculino feminino indefinido'}
+.gridM{grid-area: masculino}
+.gridF{grid-area: feminino}
+.gridI{grid-area: indefinido}
