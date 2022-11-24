@@ -30,7 +30,13 @@ export default function Login({ setToken }) {
   }
 
   return(
+
+<div className='cointainer'>
+    <div className='Titlle'> 
+    <h1>Sistema SPC</h1>
+    </div>
     <div className="login">
+      <img src="https://universidadedevassouras.edu.br/wp-content/uploads/2021/12/logo_horizontal_univasso.svg" className='log-img'></img>
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <label>
@@ -41,11 +47,12 @@ export default function Login({ setToken }) {
           <p>Password</p>
           <input type="password" onChange={e => setPassword(e.target.value)} />
         </label>
-        <div>
-          <button type="submit">Submit</button>
+        <div className='btn-logar'>
+          <button  className='btn-primary' type="submit">Submit</button>
         </div>
       </form>
     </div>
+  </div>
   )
 }
 
