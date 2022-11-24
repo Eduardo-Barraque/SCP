@@ -14,7 +14,7 @@ export default function Tabela() {
     }, []);
 
     async function load() {
-        await fetch(`${baseURL}`, {
+        await fetch(`http://localhost:8080/pessoa/getAll`, {
             method: 'GET',
         })
             .then(data => {

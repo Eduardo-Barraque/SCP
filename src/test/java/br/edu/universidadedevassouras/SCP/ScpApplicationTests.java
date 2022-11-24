@@ -1,4 +1,4 @@
-package br.edu.yuniversidadedevassouras.SCP;
+package br.edu.universidadedevassouras.SCP;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

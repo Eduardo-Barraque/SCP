@@ -1,4 +1,4 @@
-package br.edu.yuniversidadedevassouras.SCP;
+package br.edu.universidadedevassouras.SCP;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

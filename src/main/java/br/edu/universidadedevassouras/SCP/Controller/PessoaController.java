@@ -1,13 +1,12 @@
-package br.edu.yuniversidadedevassouras.SCP.Controller;
+package br.edu.universidadedevassouras.SCP.Controller;
 
-import br.edu.yuniversidadedevassouras.SCP.Repository.PessoaDAO;
-import br.edu.yuniversidadedevassouras.SCP.model.Pessoa;
-import br.edu.yuniversidadedevassouras.SCP.service.PessoaServiceImpl;
+import br.edu.universidadedevassouras.SCP.repository.PessoaRepository;
+import br.edu.universidadedevassouras.SCP.model.Pessoa;
+import br.edu.universidadedevassouras.SCP.service.PessoaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/pessoa")
@@ -15,34 +14,30 @@ import java.util.Optional;
 public class PessoaController {
 
     @Autowired
-    private PessoaDAO pessoaDAO;
+    private PessoaRepository pessoaRepository;
 
     @Autowired
     private PessoaServiceImpl pessoaServiceImpl;
 
-    @GetMapping
+    @GetMapping("/getAll")
     public List<Pessoa> getAllPessoas(){
+
         return pessoaServiceImpl.getAllPessoas();
     }
 
-    @CrossOrigin
-    @GetMapping(path = "/{id}")
-    public @ResponseBody Optional<Pessoa> getPessoa(@PathVariable("id")Long id){
-        return pessoaDAO.findById(id);
-    }
-
-    @PostMapping("/add")
+    @PostMapping
     public String postPessoa(@RequestBody Pessoa pessoa){
         pessoaServiceImpl.salvar(pessoa);
         return "Nova pessoa adicionada";
     }
 
     @DeleteMapping
-    public void Delete(){ pessoaDAO.deleteAll();
+    public void Delete(){ pessoaRepository.deleteAll();
     }
 
     @PutMapping
     public Pessoa putPessoa(@RequestBody Pessoa p){
+
         return  pessoaServiceImpl.salvar(p);
     }
 }
