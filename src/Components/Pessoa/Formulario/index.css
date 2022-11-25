@@ -7,10 +7,14 @@ body {
     font-family: sans-serif;
     background: linear-gradient(#141e30, #243b55);
 }
-
+.alinhar{
+    margin-top: 30vh;
+    align-content: center;
+    align-items: center;
+}
 .Form-box {
     position: relative;
-    top: 40vh;
+    top: 50vh;
     left: 50%;
     width: 500px;
     height: auto;
@@ -34,7 +38,6 @@ body {
 }
 
 .Form-box .UserAtributes-box input {
-    width: 100%;
     padding: 10px 0;
     font-size: 16px;
     color: #fff;
@@ -45,7 +48,7 @@ body {
     background: transparent;
 }
 .Form-box .UserAtributes-box label {
-    position: absolute;
+    position: relative;
     top:0;
     left: 0;
     padding: 10px 0;
@@ -166,3 +169,15 @@ body {
         bottom: 100%;
     }
 }
+
+.gridG{display: grid;
+    grid-template-areas:'M F I' }
+.gridM{grid-area: M;
+    display: flex;
+position: relative}
+.gridF{grid-area: F;
+    display: flex;
+position: relative}
+.gridI{grid-area: I;
+    display: flex;
+position: relative}

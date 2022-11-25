@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: center;
 
+
 }
 .Titlle{
     grid-area: title;
@@ -24,13 +25,15 @@
     box-shadow: 0px 0px 10px rgb(48 15 197);
 
 }
-
+.titulinho{
+    color: white;
+}
 .h1{
     font-size: 24px;
 }
 
 .log-img{
-    width: 50%;
+    width: 100%;
     margin-top: 0.5em;
     margin-bottom: 1em;
 

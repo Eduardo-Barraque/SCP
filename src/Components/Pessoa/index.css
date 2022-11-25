@@ -9,3 +9,5 @@ grid-template-areas: 'masculino feminino indefinido'}
 .gridM{grid-area: masculino}
 .gridF{grid-area: feminino}
 .gridI{grid-area: indefinido}
+
+.cor{color: white}

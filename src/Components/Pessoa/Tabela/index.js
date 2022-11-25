@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Table, Button } from 'reactstrap';
+import './index.css'
 
 export default function Tabela() {
 
@@ -48,29 +49,29 @@ export default function Tabela() {
 
     return (
         <Table className="table-bordered text-center">
-            <thead className="thead-dark">
+            <thead className="thead-d">
                 <tr>
-                    <th>ID</th>
-                    <th>Foto</th>
-                    <th>Nome</th>
-                    <th>CPF</th>
-                    <th>Matrícula</th>
-                    <th>Nascimento</th>
-                    <th>Genero</th>
-                    <th>Ações</th>
+                    <th className='branquinho' >ID</th>
+                    <th className='branquinho'>Foto</th>
+                    <th className='branquinho'>Nome</th>
+                    <th className='branquinho'>CPF</th>
+                    <th className='branquinho'>Matrícula</th>
+                    <th className='branquinho'>Nascimento</th>
+                    <th className='branquinho'>Genero</th>
+                    <th className='branquinho'>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 {users.map(user => (
                     <tr>
-                        <td ref={delete_id}>{user.idpessoa}</td>
-                        <td><img src={user.foto} alt="foto" /></td>
-                        <td>{user.nome}</td>
-                        <td>{user.cpf}</td>
-                        <td>{user.matricula}</td>
-                        <td>{user.nascimento}</td>
-                        <td>{user.genero}</td>
-                        <td>
+                        <td className='branquinho' ref={delete_id}>{user.idpessoa}</td>
+                        <td className='branquinho '><img className='fotos' src={user.foto} alt="foto" /></td>
+                        <td className='branquinho'>{user.nome}</td>
+                        <td className='branquinho'>{user.cpf}</td>
+                        <td className='branquinho'>{user.matricula}</td>
+                        <td className='branquinho'>{user.nascimento}</td>
+                        <td className='branquinho'>{user.genero}</td>
+                        <td className='branquinho'>
                             <Button color="info" size="sm" >Editar</Button>
                             <Button color="danger" size="sm" onClick={deleteById}>Deletar</Button>
                         </td>
